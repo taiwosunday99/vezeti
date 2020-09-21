@@ -17,7 +17,7 @@ import {
 } from '@material-ui/core';
 import useAuth from 'src/hooks/useAuth';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
-import axios from 'axios';
+// import axios from 'axios';
 // import authProvider from '../../../contexts/JWTAuthContext';
 import { useHistory } from 'react-router-dom';
 
@@ -67,7 +67,6 @@ const JWTRegister = ({ className, ...rest }) => {
           .required('Password is required'),
         policy: Yup.boolean().oneOf([true], 'This field must be checked')
       })}
-     
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
           const resp = await register(values);

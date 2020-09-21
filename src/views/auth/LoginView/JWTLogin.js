@@ -11,7 +11,7 @@ import {
   Card,
   CardContent,
   Typography,
-  FormHelperText,
+  // FormHelperText,
   TextField,
   makeStyles
 } from '@material-ui/core';
@@ -112,7 +112,7 @@ const JWTLogin = ({ className, state, ...rest }) => {
             variant="outlined"
           />
           {errors.submit && (
-                        <Card bgcolor="secondary">
+            <Card bgcolor="secondary">
               <CardContent>
                 <Typography variant="body2" color="error" component="p">
                   {errors.submit}
@@ -148,6 +148,5 @@ const JWTLogin = ({ className, state, ...rest }) => {
 JWTLogin.propTypes = {
   className: PropTypes.string
 };
-
 
 export default JWTLogin;
