@@ -113,7 +113,7 @@ export const AuthProvider = ({ children }) => {
       const response = await axios2(config);
       const { accessToken } = response.data;
 
-      const isSuccess = response.data.responseCode == '00' ? true : false;
+      const isSuccess = response.data.responseCode === '00' ? true : false;
       if (isSuccess) {
         setSession(accessToken);
         dispatch({
@@ -176,7 +176,7 @@ export const AuthProvider = ({ children }) => {
         url
       };
       const response = await axios2(config);
-      const isSuccess = response.data.responseCode == '00' ? true : false;
+      const isSuccess = response.data.responseCode === '00' ? true : false;
 
       if (isSuccess) {
         dispatch({
