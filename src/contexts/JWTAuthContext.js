@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }) => {
     // https://secure.vezeti.net/api/v3/login/
     // https://secure.vezeti.net/test-api/v3/login/
     try {
-      const url = 'https://secure.vezeti.net/api/v3/login/';
+      const url = 'https://secure.vezeti.net/test-api/v3/login/';
       const data = {
         orgId: '728934',
         typeEmailOrPhone: 'email',
@@ -113,7 +113,7 @@ export const AuthProvider = ({ children }) => {
       const response = await axios2(config);
       const { accessToken } = response.data;
 
-      const isSuccess = response.data.responseCode === '00' ? true : false;
+      const isSuccess = response.data.responseCode == '00' ? true : false;
       if (isSuccess) {
         setSession(accessToken);
         dispatch({
@@ -155,8 +155,9 @@ export const AuthProvider = ({ children }) => {
     // window.localStorage.setItem('accessToken', accessToken);
     //secure.vezeti.net/api/v3/signup/
     //secure.vezeti.net/test-api/v3/signup/
+    // dGFpd29zdW5kYXlAZ21haWwuY29tOk0wbmUhV2V0MWFORCEh
     try {
-      const url = 'https://secure.vezeti.net/api/v3/signup/';
+      const url = 'https://secure.vezeti.net/test-api/v3/signup/';
       const data = {
         orgId: '728934',
         firstName: values.firstName,
@@ -176,7 +177,7 @@ export const AuthProvider = ({ children }) => {
         url
       };
       const response = await axios2(config);
-      const isSuccess = response.data.responseCode === '00' ? true : false;
+      const isSuccess = response.data.responseCode == '00' ? true : false;
 
       if (isSuccess) {
         dispatch({
